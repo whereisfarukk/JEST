@@ -1,3 +1,4 @@
+jest.mock("../js/postToServer.js");
 const puppeteer = require("puppeteer");
 const {
   generateResult,
@@ -18,10 +19,9 @@ test("testing validateInput result", () => {
 });
 
 // integration testing
-test("testing checkAndGenerate function", () => {
-  expect(checkAndGenerate(1, "title1", "This is a test")).toBe(
-    "User ID: 1 created an article titled title1"
-  );
+test("testing checkAndGenerate function", async () => {
+  const result = await checkAndGenerate(1, "title1", "This is a test");
+  expect(result).toBe("User ID: 1 created an article titled title1");
 });
 
 // e2e testing

@@ -5,10 +5,10 @@ const init = () => {
   newPostButton.addEventListener("click", addPost);
 };
 
-const addPost = () => {
+const addPost = async () => {
   const { useridInput, titleInput, articleInput } = getUserInputs();
 
-  const resultText = checkAndGenerate(
+  const resultText = await checkAndGenerate(
     useridInput.value,
     titleInput.value,
     articleInput.value
