@@ -1,11 +1,11 @@
-const fetch = require("node-fetch");
+import fetch from 'node-fetch';
 
 const postToServer = async (data) => {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    method: "POST",
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      "Content-type": "application/json; charset=UTF-8",
+      'Content-type': 'application/json; charset=UTF-8',
     },
   });
   // .then((response) => response.json())
@@ -13,5 +13,4 @@ const postToServer = async (data) => {
   const postedData = await response.json();
   return postedData;
 };
-
-module.exports = postToServer;
+export { postToServer };

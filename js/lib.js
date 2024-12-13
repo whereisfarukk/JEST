@@ -1,10 +1,9 @@
 // const postToServer = require('./postToServer');
-const postToServer = require("./postToServer");
 // get user input fields
 const getUserInputs = function () {
-  const useridInput = document.querySelector("input#userid");
-  const titleInput = document.querySelector("input#title");
-  const articleInput = document.querySelector("textarea#article");
+  const useridInput = document.querySelector('input#userid');
+  const titleInput = document.querySelector('input#title');
+  const articleInput = document.querySelector('textarea#article');
 
   return {
     useridInput,
@@ -58,14 +57,14 @@ const checkAndGenerate = async function (
   // });
 
   // const { userId, title } = postedResponse;
-  const postedResponse = await postToServer({
-    title: titleValue,
-    body: articleValue,
-    userId: userIdValue,
-  });
+  // const postedResponse = await postToServer({
+  //   title: titleValue,
+  //   body: articleValue,
+  //   userId: userIdValue,
+  // });
   // generate output
-  const { userId, title } = postedResponse;
-  const resultText = generateResult(userId, title);
+  // const { userId, title } = postedResponse;
+  const resultText = generateResult(userIdValue, titleValue);
   return resultText;
 };
 
@@ -77,7 +76,7 @@ const createElement = function (type, text, className = null) {
   return newElement;
 };
 
-module.exports = {
+export {
   getUserInputs,
   validateInput,
   generateResult,
