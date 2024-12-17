@@ -1,5 +1,5 @@
 jest.mock('../js/postToServer.js');
-import puppeteer from 'puppeteer'; // Correct way to import puppeteer
+// import puppeteer from 'puppeteer'; // Correct way to import puppeteer
 import { generateResult, validateInput, checkAndGenerate } from '../js/lib';
 
 test('testing generate result', () => {

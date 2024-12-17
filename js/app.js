@@ -23,8 +23,5 @@ const addPost = async () => {
   const articleList = document.querySelector('.article-list');
   articleList.appendChild(element);
 };
-function syhellow() {
-  return 'hellow';
-}
 
 init();
